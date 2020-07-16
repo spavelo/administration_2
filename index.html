@@ -10,14 +10,14 @@
     <header>
         <div class="logo">Logo</div>
         <div class="main-menu">
-            <button class="login" onclick="showLoginDialog()">Log in</button>
-            <button class="registration" onclick="showRegistrationDialog()">Registration</button>
+            <button class="login" onclick="dialog.showLogin()">Log in</button>
+            <button class="registration" onclick="dialog.showRegistration()">Registration</button>
         </div>
         <div class="user-container">
             <div class="user">
                 <span>&#129503</span>
                 <span class="nickname"></span>
-                <button class="log-out" onclick="logOut()">Exit</button>
+                <button class="log-out" onclick="accountMenu.logOut()">Exit</button>
             </div>
         </div>
     </header>
@@ -25,7 +25,7 @@
 <div class="user-data">All user data</div>
 <div class="login-popup-container">
     <div class="login-popup">
-        <button class="close-popup-button" onclick="closePopupDialog()">&#10005;</button>
+        <button class="close-popup-button" onclick="dialog.closePopup()">&#10005;</button>
         <div class="massage"></div>
         <input id="name" type="text" placeholder="Name">
         <input id="password" type="password" placeholder="Password">
