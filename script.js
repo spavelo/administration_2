@@ -4,19 +4,24 @@ let users = [{
 }];
 
 function showLoginDialog() {
-    document.getElementsByClassName('login-popup-container')[0].style.display = 'block';
-    document.getElementsByClassName('login-user')[0].style.display = 'block';
+    getElementsByClassName('login-popup-container').style.display = 'block';
+    getElementsByClassName('login-user').style.display = 'block';
 }
 
 function showRegistrationDialog() {
-    document.getElementsByClassName('login-popup-container')[0].style.display = 'block';
-    document.getElementsByClassName('register-user')[0].style.display = 'block';
+    getElementsByClassName('login-popup-container').style.display = 'block';
+    getElementsByClassName('register-user').style.display = 'block';
 }
 
 function closePopupDialog() {
-    document.getElementsByClassName('login-popup-container')[0].style.display = 'none';
-    document.getElementsByClassName('register-user')[0].style.display = 'none';
-    document.getElementsByClassName('login-user')[0].style.display = 'none';
+    getElementsByClassName('login-popup-container').style.display = 'none';
+    getElementsByClassName('register-user').style.display = 'none';
+    getElementsByClassName('login-user').style.display = 'none';
+    getElementsByClassName('massage').style.display = 'none';
+    document.getElementById('name').value = '';
+    document.getElementById('password').value = '';
+    getElementsByClassName('login-popup').style.height = '134px';
+
 }
 
 function loginUser() {
@@ -25,7 +30,9 @@ function loginUser() {
     if (isUserExist(credential)) {
         showDataForAutorizedUser(credential.username);
     } else {
-        showErrorMassage('Wrong data');
+        showErrorMassage('Wrong data!');
+        getElementsByClassName('login-popup').style.height = '134px';
+
     }
 }
 
@@ -34,26 +41,35 @@ function registerUser() {
 
     if (isUserExist(credential)) {
         showErrorMassage('User is already exist!');
+        getElementsByClassName('login-popup').style.height = '154px';
     } else {
         showDataForAutorizedUser(credential.username);
         users.push(credential);
     }
 }
+
+function showErrorMassage(massage = '') {
+    getElementsByClassName('massage').innerHTML = massage;
+    getElementsByClassName('massage').style.display = 'block';
+}
+
 function logOut() {
-    document.getElementsByClassName('user-container')[0].style.display = 'none';
-    document.getElementsByClassName('login')[0].style.display = 'block';
-    document.getElementsByClassName('registration')[0].style.display = 'block';
-    // document.getElementById('name').value = '';
-    // document.getElementById('password').value = '';
+    getElementsByClassName('user-container').style.display = 'none';
+    getElementsByClassName('login').style.display = 'block';
+    getElementsByClassName('main-menu').style.display = 'flex';
+    getElementsByClassName('main-menu').style['flex-direction'] = 'row';
+    getElementsByClassName('registration').style.display = 'block';
+    getElementsByClassName('user-data').style.display = 'none';
+
 }
 
 function showDataForAutorizedUser(username) {
-    document.getElementsByClassName('user-container')[0].style.display = 'block';
-    document.getElementsByClassName('login-popup-container')[0].style.display = 'none';
-    document.getElementsByClassName('login')[0].style.display = 'none';
-    document.getElementsByClassName('registration')[0].style.display = 'none';
-    document.getElementsByClassName('nickname')[0].innerHTML = username;
-    document.getElementsByClassName('massage')[0].style.display = 'none';
+    getElementsByClassName('user-container').style.display = 'block';
+    getElementsByClassName('login-popup-container').style.display = 'none';
+    getElementsByClassName('login').style.display = 'none';
+    getElementsByClassName('registration').style.display = 'none';
+    getElementsByClassName('nickname').innerHTML = username;
+    getElementsByClassName('massage').style.display = 'none';
     document.getElementById('name').value = '';
     document.getElementById('password').value = '';
     closePopupDialog();
@@ -62,7 +78,7 @@ function showDataForAutorizedUser(username) {
 }
 
 function showUserData() {
-    document.getElementsByClassName('user-data')[0].style.display = 'block';
+    getElementsByClassName('user-data').style.display = 'block';
 }
 
 function isUserExist({username}) {
@@ -76,7 +92,7 @@ function getCredential() {
     return {username, password};
 }
 
-function showErrorMassage(massage = '') {
-    document.getElementsByClassName('massage').innerHTML = massage;
-    document.getElementsByClassName('massage')[0].style.display = 'block';
+function getElementsByClassName(className) {
+    return document.getElementsByClassName(className)[0];
 }
+

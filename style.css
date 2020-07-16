@@ -36,8 +36,10 @@ header {
 
 }
 
-.main-menu > button {
+.main-menu {
     height: 100%;
+    display: inline-flex;
+    flex-direction: row;
 }
 
 .login-popup-container {
@@ -73,8 +75,11 @@ header {
     width: 25px;
 }
 .massage{
-    display: none;
+    /*display: none;*/
     color: red;
+    font-size: 20px;
+    display: none;
+
 }
 
 .avatar{
