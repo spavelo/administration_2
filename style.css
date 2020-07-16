@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+}
+
+header {
+    width: 1045px;
+    height: 55px;
+    padding: 0 150px;
+    background: seagreen;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 40px;
+    color: #fff;
+}
+
+.user-container {
+    margin: 0;
+    display: none;
+    width: 200px;
+}
+.user>span{
+    font-size: 20px;
+    margin: 15px 5px;
+}
+.user{
+    display: inline-flex;
+    height: 100%;
+}
+
+.log-out {
+    height: 100%;
+    float: left;
+
+}
+
+.main-menu > button {
+    height: 100%;
+}
+
+.login-popup-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 8, 6, 0.69);
+    display: none;
+}
+
+.login-popup {
+    width: 154px;
+    height: 110px;
+    border: 1px solid silver;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 5px 10px;
+    background-color: #fff;
+}
+.login-popup > input, .menu{
+    margin: 5px;
+}
+.menu{
+    width: 70px;
+    display: none;
+}
+.close-popup-button {
+    display: flex;
+    flex-direction: row;
+    width: 25px;
+}
+.massage{
+    display: none;
+    color: red;
+}
+
+.avatar{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+}
+.user-data{
+    display: none;
+}

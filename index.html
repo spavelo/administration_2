@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Administration 2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="container">
+    <header>
+        <div class="logo">Logo</div>
+        <div class="main-menu">
+            <button class="login" onclick="showLoginDialog()">Log in</button>
+            <button class="registration" onclick="showRegistrationDialog()">Registration</button>
+        </div>
+        <div class="user-container">
+            <div class="user">
+                <span>&#129503</span>
+                <span class="nickname"></span>
+                <button class="log-out" onclick="logOut()">Exit</button>
+            </div>
+        </div>
+    </header>
+</div>
+<div class="user-data">All user data</div>
+<div class="login-popup-container">
+    <div class="login-popup">
+        <button class="close-popup-button" onclick="closePopupDialog()">&#10005;</button>
+        <div class="massage"></div>
+        <input id="name" type="text" placeholder="Name">
+        <input id="password" type="password" placeholder="Password">
+        <button class="menu login-user" onclick="loginUser()">Login</button>
+        <button class="menu register-user" onclick="registerUser()">Register</button>
+    </div>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
